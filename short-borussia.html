@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Producto</title>
+  <title>Short Borussia</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 
@@ -44,10 +44,29 @@
       width: 100%;
       border-radius: 12px;
       margin-bottom: 10px;
+      cursor: pointer;
     }
-<div id="modal" onclick="cerrarModal()">
-  <img src="imagenes/short-borussia.jpg" loading="lazy">
-</div>
+
+    /* MODAL (lupa) */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
     .precio {
       font-size: 1.3rem;
       font-weight: 800;
@@ -78,35 +97,58 @@
     }
   </style>
 </head>
+
 <body>
 
 <div class="container">
 
   <a href="index.html" class="volver">← Volver</a>
 
-  <h1>Jean clásico</h1>
+  <h1>Short Borussia</h1>
 
-  <div class="estado">Usado - Excelente estado</div>
+  <div class="estado">Nuevo - Con etiqueta</div>
 
   <div class="galeria">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
+    <img src="imagenes/short-borussia.jpg">
+    <img src="img/short2.jpg">
+    <img src="img/short3.jpg">
   </div>
 
   <div class="precio">$65000</div>
 
   <div class="descripcion">
-Short Borussia Dortmund Original
-Talle M
-NUEVO, CON ETIQUETA
+    Short Borussia Dortmund Original<br>
+    Talle M<br>
+    Nuevo, con etiqueta
   </div>
 
-  <a class="btn" href="https://wa.me/5493412275506?text=Hola!%20Me%20interesa%20el%20Jean%20clásico">
+  <a class="btn" href="https://wa.me/5493412275506?text=Hola!%20Me%20interesa%20el%20Short%20Borussia%20⚽">
     Me interesa
   </a>
 
 </div>
+
+<!-- MODAL -->
+<div id="modal" onclick="cerrarModal()">
+  <img id="modal-img">
+</div>
+
+<!-- JS -->
+<script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+
+  document.querySelectorAll(".galeria img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  function cerrarModal() {
+    modal.style.display = "none";
+  }
+</script>
 
 </body>
 </html>
