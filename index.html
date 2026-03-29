@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganga Shop</title>
-
+ 
   <!--
     FUENTE DEL TÍTULO:
     Si tenés la fuente "Gretoon Highlight" de Måns Grebäck,
     descargala y agregala así:
-
+ 
       @font-face {
         font-family: 'Gretoon Highlight';
         src: url('GretoonHighlight.woff2') format('woff2');
       }
-
+ 
     Y reemplazá en el CSS: font-family: 'Gretoon Highlight', 'Boogaloo', cursive;
   -->
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+ 
   <style>
     :root {
       --violeta:       #8e44ad;
@@ -30,9 +30,9 @@
       --blanco:        #ffffff;
       --texto:         #1a1a2e;
     }
-
+ 
     *, *::before, *::after { box-sizing: border-box; }
-
+ 
     body {
       font-family: 'Nunito', sans-serif;
       background-color: var(--blanco);
@@ -47,7 +47,7 @@
       display: flex;
       flex-direction: column;
     }
-
+ 
     body::before {
       content: '';
       position: fixed;
@@ -57,7 +57,7 @@
       pointer-events: none;
       z-index: 0;
     }
-
+ 
     /* ══ HEADER ══ */
     header {
       text-align: center;
@@ -65,7 +65,7 @@
       position: relative;
       z-index: 1;
     }
-
+ 
     .stars {
       font-size: 1.4rem;
       letter-spacing: 6px;
@@ -77,14 +77,14 @@
       0%,100% { letter-spacing: 6px; opacity: 1; }
       50%      { letter-spacing: 10px; opacity: 0.7; }
     }
-
+ 
     /* Blob solo alrededor del h1 */
     .title-blob {
       position: relative;
       display: inline-block;
       margin-bottom: 40px; /* espacio entre título y subtítulo */
     }
-
+ 
     .title-blob::before {
       content: '';
       position: absolute;
@@ -94,13 +94,13 @@
       z-index: -1;
       animation: blobWiggle 5s ease-in-out infinite;
     }
-
+ 
     @keyframes blobWiggle {
       0%,100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%; }
       33%      { border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%; }
       66%      { border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%; }
     }
-
+ 
     h1 {
       font-family: 'Boogaloo', cursive;
       font-size: clamp(2.8rem, 8vw, 5rem);
@@ -113,7 +113,7 @@
         6px 6px 0px rgba(108,52,131,0.3);
       letter-spacing: 1px;
     }
-
+ 
     .subtitulo {
       font-family: 'Nunito', sans-serif;
       font-size: 0.95rem;
@@ -127,7 +127,7 @@
       border-radius: 30px;
       border: 2px dashed rgba(142,68,173,0.3);
     }
-
+ 
     /* ══ INSTAGRAM en el header ══ */
     .ig-link {
       display: inline-flex;
@@ -157,7 +157,7 @@
       fill: var(--violeta);
       flex-shrink: 0;
     }
-
+ 
     /* ══ ONDA ══ */
     .wave {
       width: 100%;
@@ -168,7 +168,7 @@
       z-index: 1;
     }
     .wave svg { display: block; }
-
+ 
     /* ══ NAV ══ */
     nav {
       text-align: center;
@@ -177,7 +177,7 @@
       z-index: 1;
       background: var(--violeta-light);
     }
-
+ 
     .tab {
       font-family: 'Boogaloo', cursive;
       font-size: 1rem;
@@ -203,7 +203,7 @@
       box-shadow: 3px 3px 0px var(--violeta-dark);
       transform: translate(-1px, -1px);
     }
-
+ 
     /* ══ GRID ══ */
     .productos {
       flex: 1;
@@ -216,7 +216,7 @@
       z-index: 1;
       background: var(--violeta-light);
     }
-
+ 
     /* ══ CARD ══ */
     .card {
       background: var(--blanco);
@@ -247,6 +247,23 @@
       margin: 0 0 4px;
       color: var(--texto);
     }
+    .card h3 a {
+      display: inline;
+      background: none;
+      color: inherit;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      font-size: inherit;
+      font-family: inherit;
+    }
+    .card h3 a:hover {
+      background: none;
+      transform: none;
+      box-shadow: none;
+      text-decoration: underline;
+    }
     .precio {
       font-size: 1rem;
       font-weight: 800;
@@ -274,7 +291,7 @@
       box-shadow: 4px 4px 0px #4a235a;
     }
     .wa-icon { width: 16px; height: 16px; flex-shrink: 0; fill: white; }
-
+ 
     .badge {
       position: absolute;
       top: 10px; right: 10px;
@@ -287,7 +304,7 @@
       border: 2px solid rgba(0,0,0,0.1);
       box-shadow: 2px 2px 0px var(--amarillo2);
     }
-
+ 
     /* ══ FOOTER ══ */
     footer {
       position: relative;
@@ -297,7 +314,7 @@
       text-align: center;
       padding: 32px 20px 28px;
     }
-
+ 
     .footer-wave {
       width: 100%;
       overflow: hidden;
@@ -306,7 +323,7 @@
       z-index: 1;
     }
     .footer-wave svg { display: block; }
-
+ 
     .footer-slogan {
       font-family: 'Boogaloo', cursive;
       font-size: 1.3rem;
@@ -314,7 +331,7 @@
       margin: 0 0 6px;
       color: var(--amarillo);
     }
-
+ 
     .footer-sub {
       font-family: 'Nunito', sans-serif;
       font-size: 0.9rem;
@@ -326,7 +343,7 @@
       justify-content: center;
       gap: 8px;
     }
-
+ 
     .recycle {
       font-size: 1.3rem;
       animation: spin 8s linear infinite;
@@ -336,7 +353,7 @@
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
-
+ 
     .footer-ig {
       display: inline-flex;
       align-items: center;
@@ -356,13 +373,13 @@
       border-color: rgba(255,255,255,0.6);
     }
     .footer-ig svg { width: 16px; height: 16px; fill: white; flex-shrink: 0; }
-
+ 
     .footer-copy {
       font-size: 0.72rem;
       color: rgba(255,255,255,0.35);
       margin-top: 20px;
     }
-
+ 
     /* Decoraciones flotantes */
     .deco {
       position: fixed; pointer-events: none; z-index: 0;
@@ -376,7 +393,7 @@
       0%,100% { transform: translateY(0) rotate(0deg); }
       50%      { transform: translateY(-14px) rotate(8deg); }
     }
-
+ 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 600px) {
       h1 { font-size: 2.4rem; }
@@ -394,7 +411,7 @@
   cursor: pointer;
   border-radius: 8px;
 }
-
+ 
 /* MODAL (la "lupa") */
 #modal {
   display: none;
@@ -407,7 +424,7 @@
   justify-content: center;
   align-items: center;
 }
-
+ 
 #modal img {
   max-width: 90%;
   max-height: 90%;
@@ -416,27 +433,27 @@
   </style>
 </head>
 <body>
-
+ 
 <div class="deco d1">⭐</div>
 <div class="deco d2">✦</div>
 <div class="deco d3">❋</div>
 <div class="deco d4">★</div>
-
+ 
 <!-- ══ HEADER ══ -->
 <header>
   <span class="stars">✦ ✦ ✦</span>
-
+ 
   <div class="title-blob">
     <h1>Ganga Shop!</h1>
   </div>
-
+ 
   <p class="subtitulo">
     Elegí lo que te guste y escribinos por WhatsApp ♡<br>
     Somos de Rosario 🇦🇷
   </p>
-
+ 
   <br>
-
+ 
   <!-- REEMPLAZÁ "tu_usuario" por tu usuario real de Instagram -->
   <a class="ig-link" href="https://instagram.com/tu_usuario" target="_blank">
     <svg class="ig-icon" viewBox="0 0 24 24">
@@ -445,14 +462,14 @@
     @tu_usuario
   </a>
 </header>
-
+ 
 <!-- Onda separadora -->
 <div class="wave">
   <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="40">
     <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#f0e6f6"/>
   </svg>
 </div>
-
+ 
 <!-- ══ NAV ══ -->
 <nav>
   <button class="tab active" onclick="filtrar('todos', event)">🛍️ Todos</button>
@@ -462,15 +479,15 @@
   <button class="tab" onclick="filtrar('electronica', event)">🎮 Electrónica</button>
   <button class="tab" onclick="filtrar('varios', event)">📦 Varios</button>
 </nav>
-
+ 
 <!-- ══ PRODUCTOS ══ -->
 <section class="productos" id="grilla">
-
+ 
   <!-- ══════════════════════════════════════════════════
        PRODUCTO — copiá este bloque para agregar artículos<a href="jean-clasico.html">
   <img src="..." alt="Short Borussia Dortmund Original">
 </a>
-
+ 
 <h3>
   <a href="short-borussia.html" style="text-decoration:none; color:inherit;">
    SHORT BORUSSIA
@@ -478,32 +495,26 @@
 </h3>
        data-categoria: varon | mujer | unisex | electronica | varios
   ══════════════════════════════════════════════════ -->
-
- <div class="card" data-categoria="varon">
-  <span class="badge">⚽ Varón</span>
-
-  <a href="short-borussia.html">
-    <img src="imagenes/short-borussia.jpg" alt="Short Borussia Dortmund Original">
-  </a>
-
-  <h3>
-    <a href="short-borussia.html" style="text-decoration:none; color:inherit;">
-      SHORT BORUSSIA
+ 
+  <div class="card" data-categoria="varon">
+    <span class="badge">⚽ Varón</span>
+    <a href="short-borussia.html">
+      <img src="imagenes/short-borussia.jpg" alt="Short Borussia Dortmund Original">
     </a>
-  </h3>
-
-  <div class="card-body">
-    <p class="precio">$65000</p>
-
-    <a href="https://wa.me/5493412275506?text=Hola!%20Me%20interesa%20el%20Short%20Borussia%20⚽" target="_blank" style="display:flex; align-items:center; gap:8px;">
-  
- <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="card-body">
+      <h3>
+        <a href="short-borussia.html" style="text-decoration:none; color:inherit;">
+          SHORT BORUSSIA
+        </a>
+      </h3>
+      <p class="precio">$65.000</p>
+      <a href="https://wa.me/5493412275506?text=Hola!%20Me%20interesa%20el%20Short%20Borussia%20⚽" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Me interesa
-
-</a>
+      </a>
+    </div>
   </div>
-</div>
-
+ 
   <div class="card" data-categoria="mujer">
     <span class="badge">🌸 Mujer</span>
     <img src="https://via.placeholder.com/300" alt="Vestido floral">
@@ -516,7 +527,7 @@
       </a>
     </div>
   </div>
-
+ 
   <div class="card" data-categoria="unisex">
     <span class="badge">🌈 Unisex</span>
     <img src="https://via.placeholder.com/300" alt="Campera de abrigo">
@@ -529,7 +540,7 @@
       </a>
     </div>
   </div>
-
+ 
   <div class="card" data-categoria="electronica">
     <span class="badge">🎮 Electrónica</span>
     <img src="https://via.placeholder.com/300" alt="Parlante bluetooth">
@@ -542,7 +553,7 @@
       </a>
     </div>
   </div>
-
+ 
   <div class="card" data-categoria="varios">
     <span class="badge">📦 Varios</span>
     <img src="https://via.placeholder.com/300" alt="Lámpara vintage">
@@ -555,17 +566,17 @@
       </a>
     </div>
   </div>
-
+ 
   <!-- ══ FIN PRODUCTOS ══ -->
 </section>
-
+ 
 <!-- Onda antes del footer -->
 <div class="footer-wave">
   <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="40">
     <path d="M0,30 C200,0 400,60 600,30 C800,0 1000,60 1200,30 L1200,60 L0,60 Z" fill="#6c3483"/>
   </svg>
 </div>
-
+ 
 <!-- ══ FOOTER ══ -->
 <footer>
   <p class="footer-slogan">Artículos únicos, de segunda mano, a buen precio.</p>
@@ -574,7 +585,7 @@
     Lo que no se usa, que circule.
     <span class="recycle">♻️</span>
   </p>
-
+ 
   <!-- REEMPLAZÁ "tu_usuario" por tu usuario real de Instagram -->
   <a class="footer-ig" href="https://instagram.com/tu_usuario" target="_blank">
     <svg viewBox="0 0 24 24">
@@ -582,10 +593,10 @@
     </svg>
     @tu_usuario
   </a>
-
+ 
   <p class="footer-copy">Ganga Shop · Rosario 🇦🇷</p>
 </footer>
-
+ 
 <script>
   function filtrar(categoria, e) {
     const cards = document.querySelectorAll('.card');
@@ -600,14 +611,14 @@
 <script>
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
-
+ 
   document.querySelectorAll(".galeria img").forEach(img => {
     img.addEventListener("click", () => {
       modal.style.display = "flex";
       modalImg.src = img.src;
     });
   });
-
+ 
   function cerrarModal() {
     modal.style.display = "none";
   }
